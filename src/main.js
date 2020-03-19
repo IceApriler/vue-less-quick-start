@@ -6,6 +6,9 @@ import './utils/antd'
 
 Vue.config.productionTip = false
 
+const hehe = new Set()
+console.log('heheda', hehe)
+
 new Vue({
   router,
   store,

@@ -2,6 +2,7 @@ const isPro = process.env.VUE_APP_ENV === 'prod'
 module.exports = {
   publicPath: './',
   outputDir: 'dist-vue-less-quick-start',
+  transpileDependencies: ['ismobilejs', 'ant-design-vue'],
   configureWebpack: {
     devtool: isPro ? false : 'inline-source-map',
     module: {
