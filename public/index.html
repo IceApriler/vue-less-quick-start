@@ -56,21 +56,9 @@
         margin-right: 12px;
         float: left;
       }
-      .browser-upgrade .row .browser-list .browser-item .icon.chrome {
-        background: url('browser-images/chrome.png') no-repeat center center;
-        background-size: cover;
-      }
-      .browser-upgrade .row .browser-list .browser-item .icon.firefox {
-        background: url('browser-images/firefox.png') no-repeat center center;
-        background-size: cover;
-      }
-      .browser-upgrade .row .browser-list .browser-item .icon.ee360 {
-        background: url('browser-images/360ee.png') no-repeat center center;
-        background-size: cover;
-      }
-      .browser-upgrade .row .browser-list .browser-item .icon.qq {
-        background: url('browser-images/qq.png') no-repeat center center;
-        background-size: cover;
+      .browser-upgrade .row .browser-list .browser-item img {
+        width: 100%;
+        border: none;
       }
       .browser-upgrade .row .browser-list .browser-item .info {
         float: left;
@@ -86,10 +74,10 @@
       }
     </style>
     <!--[if lte IE 9]>
-      <script>
-        window.onload=function(){
-          document.getElementById('app')innerHTML = document.getElementById('browser-container').innerHTML
+      <script type="text/javascript">
+        window.onload = function() {
           document.getElementById('currentLocation').innerHTML = location.href
+          document.body.innerHTML = document.getElementById('browser-container').innerHTML
         }
       </script>
     <![endif]-->
@@ -108,7 +96,9 @@
           <div class="browser-list">
             <!-- https://www.google.cn/chrome/ -->
             <a class="browser-item" href="https://www.google.cn/chrome/" target="_blank" title="点击下载谷歌浏览器">
-              <div class="icon chrome"></div>
+              <div class="icon chrome">
+                <img src="browser-images/chrome.png" alt="谷歌浏览器">
+              </div>
               <div class="info">
                 <div class="name">谷歌浏览器</div>
                 <div class="subname">Google Ghrome</div>
@@ -116,7 +106,9 @@
             </a>
             <!-- http://www.firefox.com.cn/ -->
             <a class="browser-item" href="http://www.firefox.com.cn/ " target="_blank" title="点击下载火狐浏览器">
-              <div class="icon firefox"></div>
+              <div class="icon firefox">
+                <img src="browser-images/firefox.png" alt="谷歌浏览器">
+              </div>
               <div class="info">
                 <div class="name">火狐浏览器</div>
                 <div class="subname">Mozilla Firefox</div>
@@ -124,7 +116,9 @@
             </a>
             <!-- https://browser.360.cn/ee/ -->
             <a class="browser-item" href="https://browser.360.cn/ee/" target="_blank" title="点击下载360极速浏览器">
-              <div class="icon ee360"></div>
+              <div class="icon ee360">
+                <img src="browser-images/360ee.png" alt="谷歌浏览器">
+              </div>
               <div class="info">
                 <div class="name">360极速浏览器</div>
                 <div class="subname">畅快浏览，极致体验</div>
@@ -132,7 +126,9 @@
             </a>
             <!-- https://browser.qq.com/ -->
             <a class="browser-item" href="https://browser.qq.com/" target="_blank" title="点击下载QQ浏览器">
-              <div class="icon qq"></div>
+              <div class="icon qq">
+                <img src="browser-images/qq.png" alt="谷歌浏览器">
+              </div>
               <div class="info">
                 <div class="name">QQ浏览器</div>
                 <div class="subname">腾讯用户推荐</div>
