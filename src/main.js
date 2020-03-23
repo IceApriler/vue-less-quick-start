@@ -2,12 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './utils/antd'
+import './utils/mount' // 挂载全局方法至Vue原型
 
 Vue.config.productionTip = false
-
-const hehe = new Set()
-console.log('heheda', hehe)
 
 new Vue({
   router,

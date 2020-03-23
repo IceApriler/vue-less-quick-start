@@ -1,12 +1,6 @@
 <template>
   <a-locale-provider :locale="locale">
-    <div id="app">
-      <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
-      </div>
-      <router-view></router-view>
-    </div>
+    <router-view></router-view>
   </a-locale-provider>
 </template>
 <script>

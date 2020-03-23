@@ -1,6 +1,5 @@
 const isPro = process.env.VUE_APP_ENV === 'prod'
 module.exports = {
-  publicPath: './',
   outputDir: 'dist-vue-less-quick-start',
   transpileDependencies: ['ismobilejs', 'ant-design-vue'],
   configureWebpack: {
@@ -27,5 +26,6 @@ module.exports = {
         prependData: `@import "~@/assets/style/global.less"`
       }
     }
-  }
+  },
+  parallel: require("os").cpus().length > 1,
 }
