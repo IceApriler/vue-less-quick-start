@@ -6,10 +6,12 @@
   >
     <template v-for="item in navs">
       <a-sub-menu :key="item.name" v-if="item.children && item.children.length">
+        <!-- 一级route -->
         <template slot="title">
           <a-icon type="user" />
           <span>{{ item.meta.title }}</span>
         </template>
+        <!-- 二级route -->
         <a-menu-item
           v-for="child in item.children"
           :key="child.name"
@@ -17,6 +19,7 @@
           >{{ child.meta.title }}</a-menu-item
         >
       </a-sub-menu>
+      <!-- 一级route -->
       <a-menu-item :key="item.name" v-else @click="navigateTo(item)">
         <a-icon type="user" />
         <span>{{ item.meta.title }}</span>
@@ -26,6 +29,12 @@
 </template>
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
+
+/**
+ * 使用ant-design提供的menu组件，样式可以微调。
+ *
+ * 在/src/router/routes中，设置isSidebar为true的为menu。
+ */
 export default {
   components: {},
   data() {
@@ -43,6 +52,7 @@ export default {
       const routesClone = JSON.parse(
         JSON.stringify(this.$router.options.routes)
       )
+      /** 从一级route和二级route中过滤出isSidebar为true的route */
       const navs = routesClone
         .map(item => {
           if (item.children) {
@@ -61,8 +71,10 @@ export default {
   mounted() {},
   methods: {
     ...mapMutations({}),
+    /** 导航 */
     navigateTo(route) {
       const { name } = route
+      // 通过route.name进行导航
       this.$router.push({ name })
     }
   }

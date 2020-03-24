@@ -35,14 +35,13 @@
 </template>
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
-
 export default {
   components: {},
   data() {
     return {
-      loginoutImg: require('../../assets/images/loginout.png'),
-      lockImg: require('../../assets/images/lock.png'),
-      locationImg: require('../../assets/images/icon_location.png'),
+      loginoutImg: require('@images/loginout.png'),
+      lockImg: require('@images/lock.png'),
+      locationImg: require('@images/icon_location.png'),
 
       nickName: ''
     }

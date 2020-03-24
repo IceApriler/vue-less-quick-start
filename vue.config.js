@@ -1,4 +1,7 @@
+const path = require('path')
+
 const isPro = process.env.VUE_APP_ENV === 'prod'
+
 module.exports = {
   outputDir: 'dist-vue-less-quick-start',
   transpileDependencies: ['ismobilejs', 'ant-design-vue'],
@@ -18,6 +21,13 @@ module.exports = {
           ]
         }
       ]
+    },
+    resolve: {
+      alias: {
+        '@': path.join(__dirname, './src'),
+        '@assets': path.join(__dirname, './src/assets'),
+        '@images': path.join(__dirname, './src/assets/images')
+      }
     }
   },
   css: {
@@ -27,5 +37,5 @@ module.exports = {
       }
     }
   },
-  parallel: require("os").cpus().length > 1,
+  parallel: require('os').cpus().length > 1
 }

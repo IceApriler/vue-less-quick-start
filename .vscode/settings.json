@@ -1,0 +1,45 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "path-autocomplete.excludedItems": {
+    "**/*.js": { "when": "**/*.ts" }, // ignore js files if i'm inside a ts file
+    "**/*.map": { "when": "**" }, // always ignore *.map files
+    "**/{.git,node_modules}": { "when": "**" } // always ignore .git and node_modules folders
+  },
+  "path-autocomplete.pathMappings": {
+    "@": "${folder}/src", // src
+    "@assets": "${folder}/src/assets", // src/assets
+    "@images": "${folder}/src/assets/images" // src/assets/images
+  },
+  "editor.tabSize": 2,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vetur.format.defaultFormatter.html": "prettier",
+  "vetur.format.defaultFormatter.css": "prettier",
+  "vetur.format.defaultFormatter.js": "prettier",
+  "vetur.format.defaultFormatter.less": "prettier",
+  "vetur.format.defaultFormatter.scss": "prettier",
+  "vetur.format.defaultFormatter.ts": "prettier",
+  "alias-skip.mappings": {
+    "@": "/src",
+    "@assets": "/src/assets", // src/assets
+    "@images": "/src/assets/images" // src/assets/images
+  }
+}

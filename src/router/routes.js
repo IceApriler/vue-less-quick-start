@@ -1,4 +1,4 @@
-import Layout from '../views/layout/layout'
+import Layout from '@/views/layout/index'
 
 export default [
   {
@@ -15,7 +15,7 @@ export default [
     meta: {
       title: '登录'
     },
-    component: () => import('../views/login/index.vue')
+    component: () => import('@/views/login/index.vue')
   },
   {
     path: '/example-list',
@@ -38,7 +38,7 @@ export default [
           title: '例子A',
           isSidebar: false
         },
-        component: () => import('../views/example/exampleA/index.vue')
+        component: () => import('@/views/example/exampleA/index.vue')
       },
       {
         path: 'example-B',
@@ -47,7 +47,7 @@ export default [
           title: '例子B',
           isSidebar: true
         },
-        component: () => import('../views/example/exampleB/index.vue')
+        component: () => import('@/views/example/exampleB/index.vue')
       }
     ]
   },
@@ -72,7 +72,7 @@ export default [
           title: 'demoA',
           isSidebar: true
         },
-        component: () => import('../views/example/exampleA/index.vue')
+        component: () => import('@/views/example/exampleA/index.vue')
       },
       {
         path: 'demo-B',
@@ -81,7 +81,7 @@ export default [
           title: 'demoB',
           isSidebar: true
         },
-        component: () => import('../views/example/exampleB/index.vue')
+        component: () => import('@/views/example/exampleB/index.vue')
       }
     ]
   }

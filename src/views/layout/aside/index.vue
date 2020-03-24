@@ -8,17 +8,23 @@
   >
     <!-- 项目名称、logo等 -->
     <div class="project-info"></div>
-    <!-- 菜单导航栏 -->
-    <menuByRoutes></menuByRoutes>
+
+    <!-- 菜单导航栏：使用ant-design提供的menu组件，配合routes，样式可以微调。 -->
+    <menuByRoutes v-if="false"></menuByRoutes>
+
+    <!-- 菜单导航栏：自定义menu，menu需要手动配置 -->
+    <menuByConfig v-else></menuByConfig>
   </a-layout-sider>
 </template>
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
-import menuByRoutes from './components/menuByRoutes'
+import menuByRoutes from './menuByRoutes'
+import menuByConfig from './menuByConfig'
 
 export default {
   components: {
-    menuByRoutes
+    menuByRoutes,
+    menuByConfig
   },
   data() {
     return {}
