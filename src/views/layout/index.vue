@@ -31,9 +31,7 @@ export default {
   },
   watch: {},
   created() {},
-  mounted() {
-    console.log(this.$router)
-  },
+  mounted() {},
   methods: {
     ...mapMutations({})
   }

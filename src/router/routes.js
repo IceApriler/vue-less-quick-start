@@ -7,7 +7,7 @@ export default [
     meta: {
       title: '首页'
     },
-    redirect: { name: 'ExampleList' }
+    redirect: { name: 'ExampleA' }
   },
   {
     path: '/login',
