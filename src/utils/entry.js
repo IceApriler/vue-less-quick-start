@@ -2,7 +2,7 @@
  * 监听网络波动
  */
 window.addEventListener('offline', () => {
-  alert('你断网啦！')
+  // alert('你断网啦！')
 })
 
 /**

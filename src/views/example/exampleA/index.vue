@@ -1,5 +1,7 @@
 <template>
-  <div class="container">{{ $route.path }}</div>
+  <div class="container">
+    <div class="name">{{ $route.path }}</div>
+  </div>
 </template>
 <script>
 import { mapGetters } from 'vuex'
@@ -19,4 +21,13 @@ export default {
 }
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.container {
+  color: @primary-color;
+  position: relative;
+  height: 100px;
+  .name {
+    #layout.center(translate);
+  }
+}
+</style>

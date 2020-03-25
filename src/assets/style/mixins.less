@@ -1,0 +1,64 @@
+/* mixins混入 */
+
+/*-------------------------------------
+├   布局                              ┆
+└------------------------------------*/
+#layout {
+  // 盒子宽高
+  .size(@w, @h) {
+    width: @w;
+    height: @h;
+  }
+
+  // 统一盒模型
+  .border-box() {
+    *,
+    *:after,
+    *:before {
+      box-sizing: border-box;
+    }
+  }
+
+  // 居中, 确定尺寸。（父盒子需要设置position）
+  .center(known, @w, @h) {
+    .size(@w, @h);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -(@w / 2);
+    margin-left: -(@h / 2);
+  }
+  .center(known-x, @w) {
+    width: @w;
+    position: absolute;
+    left: 50%;
+    margin-left: -(@h / 2);
+  }
+  .center(known-y, @h) {
+    height: @h;
+    position: absolute;
+    top: 50%;
+    margin-top: -(@w / 2);
+  }
+
+  // 居中, CSS3平移方式, 移动端可用。（父盒子需要设置position）
+  .center(translate) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  // 扩展点击区域（移动端常用）
+  .extend-click() {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+    }
+  }
+}

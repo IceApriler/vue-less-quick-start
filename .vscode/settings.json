@@ -41,5 +41,8 @@
     "@": "/src",
     "@assets": "/src/assets", // src/assets
     "@images": "/src/assets/images" // src/assets/images
+  },
+  "less.compile": {
+    "out": false
   }
 }
