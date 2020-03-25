@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <div class="name">{{ $route.path }}</div>
+    <div class="center-name ellipsis">{{ $route.path }}</div>
+    <div class="ellipsis-name">{{ $route.path }}</div>
   </div>
 </template>
 <script>
@@ -23,11 +24,16 @@ export default {
 
 <style lang="less" scoped>
 .container {
+  .border-box();
   color: @primary-color;
   position: relative;
   height: 100px;
-  .name {
-    #layout.center(translate);
+  .center-name {
+    .box-center(translate);
+  }
+  .ellipsis-name {
+    .text-ellipsis();
+    width: 50px;
   }
 }
 </style>

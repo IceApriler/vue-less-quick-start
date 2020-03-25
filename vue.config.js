@@ -27,6 +27,5 @@ module.exports = {
         '@images': path.join(__dirname, './src/assets/images')
       }
     }
-  },
-  parallel: require('os').cpus().length > 1
+  }
 }

@@ -1,64 +1,126 @@
 /* mixins混入 */
+// doc: https://less.bootcss.com
 
-/*-------------------------------------
-├   布局                              ┆
-└------------------------------------*/
-#layout {
-  // 盒子宽高
-  .size(@w, @h) {
-    width: @w;
-    height: @h;
+/*
+* 目录
+*
+* .size(@w, @h) 盒子宽高
+* .border-box() 统一盒模型
+*
+* .box-center(known, @w, @h) 水平垂直居中，确定尺寸（父盒子需要设置position）
+* .box-center(known-x, @w) 水平居中，确定尺寸（父盒子需要设置position）
+* .box-center(known-y, @h) 垂直居中，确定尺寸。（父盒子需要设置position）
+* 
+* .box-center(translate) 居中, 不确定尺寸，ie9+（父盒子需要设置position）
+* .box-center(translate-x) 水平居中, 不确定尺寸，ie9+（父盒子需要设置position）
+* .box-center(translate-y) 垂直居中, 不确定尺寸，ie9+（父盒子需要设置position）
+* 
+* .box-extend-click(@size: 10px) 扩展点击区域（移动端常用）
+* 
+* .text-ellipsis(@rowCount: 1) 溢出省略号
+*
+*/
+
+/**
+* 盒子宽高
+* @param w 宽度
+* @param h 高度
+*/
+.size(@w, @h) {
+  width: @w;
+  height: @h;
+}
+
+/**
+* 统一盒模型
+*/
+.border-box() {
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
   }
+}
 
-  // 统一盒模型
-  .border-box() {
-    *,
-    *:after,
-    *:before {
-      box-sizing: border-box;
-    }
-  }
+/**
+* 居中，确定尺寸。（父盒子需要设置position）
+* @param known 确定尺寸
+* @param w 宽度
+* @param h 高度
+*/
+.box-center(known, @w, @h) {
+  .size(@w, @h);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -(@w / 2);
+  margin-left: -(@h / 2);
+}
+.box-center(known-x, @w) {
+  width: @w;
+  position: absolute;
+  left: 50%;
+  margin-left: -(@h / 2);
+}
+.box-center(known-y, @h) {
+  height: @h;
+  position: absolute;
+  top: 50%;
+  margin-top: -(@w / 2);
+}
 
-  // 居中, 确定尺寸。（父盒子需要设置position）
-  .center(known, @w, @h) {
-    .size(@w, @h);
+/**
+* 居中, 不确定尺寸，ie9+。（父盒子需要设置position）
+* @param translate CSS3平移方式
+*/
+.box-center(translate) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.box-center(translate-x) {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.box-center(translate-y) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/**
+* 扩展点击区域（移动端常用）
+* @param size 上下左右偏移的大小
+*/
+.box-extend-click(@size: 10px) {
+  position: relative;
+  &:before {
+    content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -(@w / 2);
-    margin-left: -(@h / 2);
+    top: -@size;
+    left: -@size;
+    right: -@size;
+    bottom: -@size;
   }
-  .center(known-x, @w) {
-    width: @w;
-    position: absolute;
-    left: 50%;
-    margin-left: -(@h / 2);
-  }
-  .center(known-y, @h) {
-    height: @h;
-    position: absolute;
-    top: 50%;
-    margin-top: -(@w / 2);
-  }
+}
 
-  // 居中, CSS3平移方式, 移动端可用。（父盒子需要设置position）
-  .center(translate) {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/**
+* 溢出省略号
+* @param rowCount 行数
+*/
+.text-ellipsis(@rowCount: 1) {
+  & when (@rowCount = 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
-
-  // 扩展点击区域（移动端常用）
-  .extend-click() {
-    position: relative;
-    &:before {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-    }
+  & when (@rowCount > 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @rowCount;
+    -webkit-box-orient: vertical;
   }
 }

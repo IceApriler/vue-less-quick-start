@@ -1,4 +1,4 @@
-import { storage } from '../../utils/mount'
+import { storage } from '../../utils/entry'
 
 export default {
   namespaced: true,
