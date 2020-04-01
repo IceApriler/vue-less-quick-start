@@ -98,3 +98,33 @@ npm run build-pro # 编译并压缩生产包
 - [moment: Github](https://github.com/moment/moment) 日期格式化库，`ant-design-vue`的日期组件需要。
 - [nprogress: Github](https://github.com/rstacruz/nprogress) 页面进度条状态库。
 - [prettier: Github](https://github.com/prettier/prettier) 代码美化工具。
+
+## 注意事项
+
+- [css中使用webpack别名(alias)](https://www.jianshu.com/p/ef565d7cce71)
+  - webpack中设置了别名，css中想使用需要在路径前添加`~`。
+
+## VSCode插件安装
+
+### 一定安装
+
+- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) 
+  - Vue语法高亮、代码提示、Emmet、格式化等功能。
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) 
+  - 可以格式化JS、JSON、Vue、Less、SCSS等。
+  - facebook、react、babel、webpack推荐。
+- [Path Autocomplete](https://marketplace.visualstudio.com/items?itemName=ionutvmi.path-autocomplete)
+  - webpack可以配置`@`别名，但是在代码中使用时没有代码提示，使用这个插件可以实现路径补全。
+- [别名路径跳转](https://marketplace.visualstudio.com/items?itemName=lihuiwang.vue-alias-skip)
+  - 虽然使用`Path Autocomplete`可以实现路径补全，但是无法使用`ctrl + 点击`或者`command + 点击`跳转到该文件，使用这个插件可以实现。
+
+### 推荐安装
+
+- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)git管理插件
+  - 每一行代码旁边都会显示代码提交人、提交时间和message信息，可以快捷回溯代码。
+  - 点击侧边栏GitLens图标可以查看代码历史。
+  - 可以操作查看代码push记录。
+- [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+  - 支持注释高亮等。
+- [Highlight Matching Tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag)
+  - 开始闭合标签匹配、开始闭合大括号匹配。
