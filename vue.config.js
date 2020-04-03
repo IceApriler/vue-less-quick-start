@@ -9,25 +9,6 @@ module.exports = {
     loaderOptions: {
       less: {
         javascriptEnabled: true // fix https://github.com/ant-design/ant-motion/issues/44
-      },
-      postcss: {
-        plugins: [
-          require('postcss-px-to-viewport')({
-            unitToConvert: 'px',
-            viewportWidth: 750,
-            viewportHeight: 1334,
-            unitPrecision: 3,
-            propList: ['*'],
-            viewportUnit: 'vw',
-            fontViewportUnit: 'vw',
-            selectorBlackList: [],
-            minPixelValue: 1,
-            mediaQuery: false,
-            replace: true,
-            include: [new RegExp(path.join(__dirname, './src/views/mobile'))],
-            exclude: /(\/|\\)(node_modules)(\/|\\)/
-          })
-        ]
       }
     }
   },
