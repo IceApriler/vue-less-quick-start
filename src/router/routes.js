@@ -18,6 +18,14 @@ export default [
     component: () => import('@/views/login/index.vue')
   },
   {
+    path: '/mobile',
+    name: 'Mobile',
+    meta: {
+      title: '手机端'
+    },
+    component: () => import('@/views/mobile/index.vue')
+  },
+  {
     path: '/example-list',
     name: 'ExampleList',
     component: Layout,
