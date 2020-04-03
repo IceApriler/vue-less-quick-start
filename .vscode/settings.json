@@ -12,6 +12,7 @@
     "@assets": "${folder}/src/assets", // src/assets
     "@images": "${folder}/src/assets/images" // src/assets/images
   },
+  "path-autocomplete.extensionOnImport": true,
   "editor.tabSize": 2,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
