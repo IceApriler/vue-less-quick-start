@@ -133,3 +133,7 @@ npm run build-pro # 编译并压缩生产包
   - 支持注释高亮等。
 - [Highlight Matching Tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag)
   - 开始闭合标签匹配、开始闭合大括号匹配。
+
+### 项目模板
+
+- 基于`vue-less-quick-start`创建。
