@@ -32,10 +32,15 @@ git clone http://my-project.git # 克隆新项目至本地
 
 ### 三、配置项目
 
-- [/src/config/index](/src/config/index.js) 项目配置文件，配置baseApiUrl、projectName。
-- [/vue.config.js](/vue.config.js) vue-cli配置文件，配置outputDir。
-- [/package.json](/package.json) 修改name。
-- [/README.md](/README.md) README.md，将vue-less-quick-start修改为项目名称，并修改项目简介。
+- [.env](/.env) 环境变量，配置`BASE_URL`和`VUE_APP_TITLE`。
+  - `BASE_URL`，域名后的二级路径。如过设置成`/quick-start/`，则配合nginx后，访问时的地址为`http://test.com/quick-start`。
+  - `VUE_APP_TITLE`，项目名称，页面title。用来显示在浏览器的标签页。
+- [/src/config/index](/src/config/index.js) 项目配置文件，配置`baseApiUrl`。
+  - `baseApiUrl`，后端api地址。
+- [/vue.config.js](/vue.config.js) vue-cli配置文件，配置`outputDir`。
+  - `outputDir`，打包后的输出地址名。
+- [/package.json](/package.json) 修改`name`。
+- [/README.md](/README.md) README.md，将vue-less-quick-start修改为`项目名称`，并修改`项目简介`。
 - 👏此时，项目已经配置完成了，删除你现在正在浏览的`开始创建新项目(构建帮助)`的内容后，就可以自由修改本readme了，正式开始新的项目开发🤨。
 
 <!-- 构建帮助 end -->
