@@ -4,6 +4,7 @@ const isPro = process.env.VUE_APP_ENV === 'prod'
 
 module.exports = {
   outputDir: 'dist-vue-less-quick-start',
+  publicPath: process.env.BASE_URL,
   transpileDependencies: ['ismobilejs', 'ant-design-vue'],
   css: {
     loaderOptions: {

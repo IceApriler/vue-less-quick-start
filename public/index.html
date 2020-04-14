@@ -1,13 +1,14 @@
+<!-- location: <%= BASE_URL %> -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="renderer" content="webkit"/>
-    <meta name="force-rendering" content="webkit"/>
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title><%= VUE_APP_TITLE %></title>
     <style>
       #browser-container {
         width: 0;
@@ -77,7 +78,9 @@
       <script type="text/javascript">
         window.onload = function() {
           document.getElementById('currentLocation').innerHTML = location.href
-          document.body.innerHTML = document.getElementById('browser-container').innerHTML
+          document.body.innerHTML = document.getElementById(
+            'browser-container'
+          ).innerHTML
         }
       </script>
     <![endif]-->
@@ -87,17 +90,28 @@
       <div class="browser-upgrade">
         <div class="row">
           <h1>亲爱的用户，您当前的浏览器版本过低，可能存在安全风险</h1>
-          <p>您正在使用旧版 Internet Explorer（IE）浏览器访问 <a id="currentLocation" href="" target="_blank"></a>，更换浏览器或升级后可以重新访问。</p>
+          <p>
+            您正在使用旧版 Internet Explorer（IE）浏览器访问
+            <a id="currentLocation" href="" target="_blank"></a
+            >，更换浏览器或升级后可以重新访问。
+          </p>
         </div>
         <div class="hr"></div>
         <div class="row">
           <h3>建议升级浏览器</h3>
-          <p>推荐使用以下浏览器的最新版本。如果您的电脑已有以下浏览器的最新版本则直接使用该浏览器极速模式访问即可。</p>
+          <p>
+            推荐使用以下浏览器的最新版本。如果您的电脑已有以下浏览器的最新版本则直接使用该浏览器极速模式访问即可。
+          </p>
           <div class="browser-list">
             <!-- https://www.google.cn/chrome/ -->
-            <a class="browser-item" href="https://www.google.cn/chrome/" target="_blank" title="点击下载谷歌浏览器">
+            <a
+              class="browser-item"
+              href="https://www.google.cn/chrome/"
+              target="_blank"
+              title="点击下载谷歌浏览器"
+            >
               <div class="icon chrome">
-                <img src="browser-images/chrome.png" alt="谷歌浏览器">
+                <img src="browser-images/chrome.png" alt="谷歌浏览器" />
               </div>
               <div class="info">
                 <div class="name">谷歌浏览器</div>
@@ -105,9 +119,14 @@
               </div>
             </a>
             <!-- http://www.firefox.com.cn/ -->
-            <a class="browser-item" href="http://www.firefox.com.cn/ " target="_blank" title="点击下载火狐浏览器">
+            <a
+              class="browser-item"
+              href="http://www.firefox.com.cn/ "
+              target="_blank"
+              title="点击下载火狐浏览器"
+            >
               <div class="icon firefox">
-                <img src="browser-images/firefox.png" alt="谷歌浏览器">
+                <img src="browser-images/firefox.png" alt="谷歌浏览器" />
               </div>
               <div class="info">
                 <div class="name">火狐浏览器</div>
@@ -115,9 +134,14 @@
               </div>
             </a>
             <!-- https://browser.360.cn/ee/ -->
-            <a class="browser-item" href="https://browser.360.cn/ee/" target="_blank" title="点击下载360极速浏览器">
+            <a
+              class="browser-item"
+              href="https://browser.360.cn/ee/"
+              target="_blank"
+              title="点击下载360极速浏览器"
+            >
               <div class="icon ee360">
-                <img src="browser-images/360ee.png" alt="谷歌浏览器">
+                <img src="browser-images/360ee.png" alt="谷歌浏览器" />
               </div>
               <div class="info">
                 <div class="name">360极速浏览器</div>
@@ -125,9 +149,14 @@
               </div>
             </a>
             <!-- https://browser.qq.com/ -->
-            <a class="browser-item" href="https://browser.qq.com/" target="_blank" title="点击下载QQ浏览器">
+            <a
+              class="browser-item"
+              href="https://browser.qq.com/"
+              target="_blank"
+              title="点击下载QQ浏览器"
+            >
               <div class="icon qq">
-                <img src="browser-images/qq.png" alt="谷歌浏览器">
+                <img src="browser-images/qq.png" alt="谷歌浏览器" />
               </div>
               <div class="info">
                 <div class="name">QQ浏览器</div>
@@ -138,13 +167,22 @@
         </div>
         <div class="hr"></div>
         <div class="row">
-          <h3>温馨提示：Windows XP 及旧版 Internet Explorer 的支持服务已终止</h3>
-          <p>自2016年1月12日起，微软不再为 IE 11 以下版本提供相应支持和更新。没有关键的浏览器安全更新，您的电脑可能易受有害病毒、间谍软件和其他恶意软件的攻击，甚至可能会窃取或损害您的业务数据和信息。</p>
+          <h3>
+            温馨提示：Windows XP 及旧版 Internet Explorer 的支持服务已终止
+          </h3>
+          <p>
+            自2016年1月12日起，微软不再为 IE 11
+            以下版本提供相应支持和更新。没有关键的浏览器安全更新，您的电脑可能易受有害病毒、间谍软件和其他恶意软件的攻击，甚至可能会窃取或损害您的业务数据和信息。
+          </p>
         </div>
       </div>
     </div>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->

@@ -18,7 +18,4 @@ switch (VUE_APP_ENV) {
     baseApiUrl = ''
 }
 
-/** 项目名称 */
-const projectName = 'vue-less-quick-start'
-
-export { baseApiUrl, projectName }
+export { baseApiUrl }

@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
-import { projectName } from '../config'
 import routes from './routes'
 
 Vue.use(VueRouter)
@@ -30,7 +29,7 @@ router.beforeEach((to, from, next) => {
   NProgress.start()
   to.meta &&
     to.meta.title &&
-    (document.title = `${to.meta.title} | ${projectName}`)
+    (document.title = `${to.meta.title} | ${process.env.VUE_APP_TITLE}`)
   next()
 })
 
