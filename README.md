@@ -13,15 +13,6 @@
 
 ### 二、使用模板
 
-#### 方式一
-```bash
-git clone http://211.90.39.175:8187/front_group/vue-less-quick-start.git my-project --depth=1 # 克隆至本地并重命名为my-project
-cd my-project # 进入项目
-git remote set-url origin http://my-project.git # 将my-project文件夹的远程地址修改为对应的新项目地址
-git remote -v # 检查一下远程仓库是否正确
-```
-
-#### 方式二
 ```bash
 git clone http://211.90.39.175:8187/front_group/vue-less-quick-start.git # 克隆vue-less-quick-start至本地
 git clone http://my-project.git # 克隆新项目至本地
