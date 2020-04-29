@@ -13,16 +13,14 @@ const scrollBehavior = (to, from, savedPosition) => {
   } else {
     return {
       x: 0,
-      y: 0
+      y: 0,
     }
   }
 }
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
   routes,
-  scrollBehavior
+  scrollBehavior,
 })
 
 router.beforeEach((to, from, next) => {

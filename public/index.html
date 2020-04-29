@@ -1,4 +1,3 @@
-<!-- location: <%= BASE_URL %> -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="renderer" content="webkit" />
     <meta name="force-rendering" content="webkit" />
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <link rel="icon" href="favicon.ico" />
     <title><%= VUE_APP_TITLE %></title>
     <style>
       #browser-container {
@@ -79,7 +78,7 @@
         window.onload = function() {
           document.getElementById('currentLocation').innerHTML = location.href
           document.body.innerHTML = document.getElementById(
-            'browser-container'
+            'browser-container',
           ).innerHTML
         }
       </script>
