@@ -3,7 +3,7 @@
 <!-- 构建帮助 start -->
 
 该项目为`前端项目开发模板`，目录和通用工具已经构建好，可以快速启动前端开发。
-本项目长期更新，使用`方式二`创建项目时记得先拉取最新代码。
+本项目长期更新，创建项目时记得先拉取最新代码。
 
 ## 开始创建新项目
 
@@ -28,10 +28,7 @@ git clone http://my-project.git # 克隆新项目至本地
   - `VUE_APP_TITLE`，项目名称，页面 title。用来显示在浏览器的标签页。
 - [/src/config/index](/src/config/index.js) 项目配置文件，配置`baseApiUrl`。
   - `baseApiUrl`，后端 api 地址。
-- [/vue.config.js](/vue.config.js) vue-cli 配置文件，配置`outputDir`。
-  - `outputDir`，打包后的输出地址名。
-- [/package.json](/package.json) 修改`name`。
-- [/README.md](/README.md) README.md，将 vue-less-quick-start 修改为`项目名称`，并修改`项目简介`。
+- 全局搜索`vue-less-quick-start`，修改为项目名称。
 - 👏 此时，项目已经配置完成了，删除你现在正在浏览的`开始创建新项目(构建帮助)`的内容后，就可以自由修改本 readme 了，正式开始新的项目开发 🤨。
 
 <!-- 构建帮助 end -->
@@ -131,7 +128,3 @@ npm run build-pro # 编译并压缩生产包
   - 支持注释高亮等。
 - [Highlight Matching Tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag)
   - 开始闭合标签匹配、开始闭合大括号匹配。
-
-### 项目模板
-
-- 基于`vue-less-quick-start`创建。
