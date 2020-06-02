@@ -9,12 +9,12 @@
 
 ### 一、创建仓库
 
-在[`Gitlab`](http://211.90.39.175:8187/)创建一个新的项目，假设新项目名为`my-project`, 获取到项目的地址为`http://my-project.git`。
+创建一个新的项目，假设新项目名为`my-project`, 获取到项目的地址为`http://my-project.git`。
 
 ### 二、使用模板
 
 ```bash
-git clone http://211.90.39.175:8187/front_group/vue-less-quick-start.git # 克隆vue-less-quick-start至本地
+git clone http://10.10.10.10/front_group/vue-less-quick-start.git # 克隆vue-less-quick-start至本地
 git clone http://my-project.git # 克隆新项目至本地
 ```
 
