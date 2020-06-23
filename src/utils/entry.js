@@ -12,10 +12,10 @@ Vue.use(Antd)
  * 文档：https://github.com/wuchangming/web-storage-cache
  */
 export const storage = (Vue.prototype.$storage = new WebStorageCache({
-  storage: 'localStorage'
+  storage: 'localStorage',
 }))
 export const session = (Vue.prototype.$session = new WebStorageCache({
-  storage: 'sessionCache'
+  storage: 'sessionCache',
 }))
 
 /**

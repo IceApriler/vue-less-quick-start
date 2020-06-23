@@ -39,32 +39,32 @@ export default {
   components: {},
   data() {
     return {
-      defaultMenuRouteName: ''
+      defaultMenuRouteName: '',
     }
   },
   computed: {
     ...mapState({}),
     ...mapGetters({
-      isCollapsed: 'layout/isCollapsed'
+      isCollapsed: 'layout/isCollapsed',
     }),
     // 菜单导航（默认是由/src/router/routes自动控制）
     navs() {
       const routesClone = JSON.parse(
-        JSON.stringify(this.$router.options.routes)
+        JSON.stringify(this.$router.options.routes),
       )
       /** 从一级route和二级route中过滤出isSidebar为true的route */
       const navs = routesClone
         .map(item => {
           if (item.children) {
             item.children = item.children.filter(
-              i => i.meta && i.meta.isSidebar
+              i => i.meta && i.meta.isSidebar,
             )
           }
           return item
         })
         .filter(i => i.meta && i.meta.isSidebar)
       return navs
-    }
+    },
   },
   watch: {},
   created() {},
@@ -76,8 +76,8 @@ export default {
       const { name } = route
       // 通过route.name进行导航
       this.$router.push({ name })
-    }
-  }
+    },
+  },
 }
 </script>
 

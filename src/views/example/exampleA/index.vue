@@ -13,12 +13,12 @@ export default {
     return {}
   },
   computed: {
-    ...mapGetters({})
+    ...mapGetters({}),
   },
   watch: {},
   created() {},
   mounted() {},
-  methods: {}
+  methods: {},
 }
 </script>
 

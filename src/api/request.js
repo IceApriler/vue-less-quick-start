@@ -8,7 +8,7 @@ axios.interceptors.request.use(
   },
   function(error) {
     return Promise.reject(error)
-  }
+  },
 )
 
 axios.interceptors.response.use(
@@ -17,7 +17,7 @@ axios.interceptors.response.use(
   },
   function(error) {
     return Promise.reject(error)
-  }
+  },
 )
 
 axios.defaults.withCredentials = true
@@ -54,8 +54,8 @@ export function request(url, { method, data = {}, baseUrl }) {
     method,
     baseURL: baseUrl || baseApiUrl,
     headers: {
-      'Content-Type': 'application/json'
-    }
+      'Content-Type': 'application/json',
+    },
   }
   method === 'get' ? (opts.params = data) : (opts.data = data)
   return doAxios(opts)
@@ -67,9 +67,9 @@ export function formRequest(url, { method, data = {}, baseUrl }) {
     method,
     baseURL: baseUrl || baseApiUrl,
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
-    params: data
+    params: data,
   }
   return doAxios(opts)
 }

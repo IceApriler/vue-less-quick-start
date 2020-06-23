@@ -43,25 +43,25 @@ export default {
       lockImg: require('@images/lock.png'),
       locationImg: require('@images/icon_location.png'),
 
-      nickName: ''
+      nickName: '',
     }
   },
   computed: {
     ...mapState({}),
     ...mapGetters({
-      isCollapsed: 'layout/isCollapsed'
-    })
+      isCollapsed: 'layout/isCollapsed',
+    }),
   },
   watch: {},
   created() {},
   mounted() {},
   methods: {
     ...mapMutations({
-      toggleSideBar: 'layout/toggleSideBar'
+      toggleSideBar: 'layout/toggleSideBar',
     }),
     editPassword() {},
-    logout() {}
-  }
+    logout() {},
+  },
 }
 </script>
 
