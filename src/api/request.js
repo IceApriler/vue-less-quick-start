@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { baseApiUrl } from '../config'
 import { message } from 'ant-design-vue'
+import router from '@/router/index.js'
 
 axios.interceptors.request.use(
   function(config) {
@@ -30,7 +31,7 @@ function doAxios(opts) {
         if (data.code === 200) {
           return data
         } else if (data.code === 302 || data.code === 403) {
-          location.href = '/login'
+          router.replace('/login')
         } else {
           message.error(data.msg || '系统错误请联系管理员', 3)
           return Promise.reject(data)
@@ -42,7 +43,7 @@ function doAxios(opts) {
     .catch(err => {
       message.error(err.msg || '系统错误请联系管理员', 3)
       if (err.response && err.response.data && err.response.data.code === 302) {
-        location.href = '/login'
+        router.replace('/login')
       }
       return Promise.reject(err)
     })
