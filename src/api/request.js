@@ -31,8 +31,12 @@ function doAxios(opts) {
         if (status === 200) {
           if (data.code === 200) {
             resolve(data)
-          } else if (data.code === 302 || data.code === 403) {
-            router.push('/login')
+          } else if (
+            data.code === 302 ||
+            data.code === 403 ||
+            data.code === 401
+          ) {
+            router.replace('/login')
           } else {
             message.error(data.message || '系统错误请联系管理员', 3)
             reject(data)
@@ -48,7 +52,7 @@ function doAxios(opts) {
           err.response.data &&
           err.response.data.code === 302
         ) {
-          router.push('/login')
+          router.replace('/login')
         }
         reject(err)
       })
