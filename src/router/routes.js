@@ -5,25 +5,25 @@ export default [
     path: '/',
     name: 'Home',
     meta: {
-      title: '首页'
+      title: '首页',
     },
-    redirect: { name: 'ExampleA' }
+    redirect: { name: 'ExampleA' },
   },
   {
     path: '/login',
     name: 'Login',
     meta: {
-      title: '登录'
+      title: '登录',
     },
-    component: () => import('@/views/login/index.vue')
+    component: () => import('@/views/login/index.vue'),
   },
   {
     path: '/mobile',
     name: 'Mobile',
     meta: {
-      title: '手机端'
+      title: '手机端',
     },
-    component: () => import('@/views/mobile/index.vue')
+    component: () => import('@/views/mobile/index.vue'),
   },
   {
     path: '/example-list',
@@ -31,33 +31,33 @@ export default [
     component: Layout,
     meta: {
       title: '例子集合',
-      isSidebar: true
+      isSidebar: true,
     },
     children: [
       {
         path: '',
         name: '',
-        redirect: { name: 'ExampleA' }
+        redirect: { name: 'ExampleA' },
       },
       {
         path: 'example-a',
         name: 'ExampleA',
         meta: {
           title: '例子A',
-          isSidebar: false
+          isSidebar: false,
         },
-        component: () => import('@/views/example/exampleA/index.vue')
+        component: () => import('@/views/example/exampleA/index.vue'),
       },
       {
         path: 'example-B',
         name: 'ExampleB',
         meta: {
           title: '例子B',
-          isSidebar: true
+          isSidebar: true,
         },
-        component: () => import('@/views/example/exampleB/index.vue')
-      }
-    ]
+        component: () => import('@/views/example/exampleB/index.vue'),
+      },
+    ],
   },
   {
     path: '/demo-list',
@@ -65,32 +65,32 @@ export default [
     component: Layout,
     meta: {
       title: 'demo集合',
-      isSidebar: true
+      isSidebar: true,
     },
     children: [
       {
         path: '',
         name: '',
-        redirect: { name: 'ExampleA' }
+        redirect: { name: 'ExampleA' },
       },
       {
         path: 'demo-a',
         name: 'DemoA',
         meta: {
           title: 'demoA',
-          isSidebar: true
+          isSidebar: true,
         },
-        component: () => import('@/views/example/exampleA/index.vue')
+        component: () => import('@/views/example/exampleA/index.vue'),
       },
       {
         path: 'demo-B',
         name: 'DemoB',
         meta: {
           title: 'demoB',
-          isSidebar: true
+          isSidebar: true,
         },
-        component: () => import('@/views/example/exampleB/index.vue')
-      }
-    ]
-  }
+        component: () => import('@/views/example/exampleB/index.vue'),
+      },
+    ],
+  },
 ]

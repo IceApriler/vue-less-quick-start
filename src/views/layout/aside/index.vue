@@ -24,7 +24,7 @@ import menuByConfig from './menuByConfig'
 export default {
   components: {
     menuByRoutes,
-    menuByConfig
+    menuByConfig,
   },
   data() {
     return {}
@@ -32,15 +32,15 @@ export default {
   computed: {
     ...mapState({}),
     ...mapGetters({
-      isCollapsed: 'layout/isCollapsed'
-    })
+      isCollapsed: 'layout/isCollapsed',
+    }),
   },
   watch: {},
   created() {},
   mounted() {},
   methods: {
-    ...mapMutations({})
-  }
+    ...mapMutations({}),
+  },
 }
 </script>
 
