@@ -20,21 +20,21 @@ import Header from './header'
 export default {
   components: {
     Aside,
-    Header
+    Header,
   },
   data() {
     return {}
   },
   computed: {
     ...mapState({}),
-    ...mapGetters({})
+    ...mapGetters({}),
   },
   watch: {},
   created() {},
   mounted() {},
   methods: {
-    ...mapMutations({})
-  }
+    ...mapMutations({}),
+  },
 }
 </script>
 

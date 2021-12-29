@@ -9,9 +9,9 @@ export default {
   name: 'App',
   data() {
     return {
-      locale: zhCN
+      locale: zhCN,
     }
-  }
+  },
 }
 </script>
 <style lang="less" scoped>

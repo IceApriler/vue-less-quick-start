@@ -7,5 +7,5 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules,
-  strict: process.env.VUE_APP_ENV !== 'prod'
+  strict: process.env.VUE_APP_ENV !== 'prod',
 })

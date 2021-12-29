@@ -15,9 +15,9 @@ module.exports = {
       mediaQuery: false,
       replace: true,
       include: [makeRegPath(path.join(__dirname, './src/views/mobile'))], // 只有mobile目录下才会转换（行内样式除外）
-      exclude: [makeRegPath(path.join(__dirname, './node_modules'))]
-    }
-  }
+      exclude: [makeRegPath(path.join(__dirname, './node_modules'))],
+    },
+  },
 }
 
 /**

@@ -32,43 +32,43 @@ const menuList = [
     name: 'ExampleA',
     meta: {
       title: '例子A',
-      isSidebar: true
-    }
+      isSidebar: true,
+    },
   },
   {
     name: 'ExampleB',
     meta: {
       title: '例子A',
-      isSidebar: true
-    }
+      isSidebar: true,
+    },
   },
   {
     name: 'DemoA',
     meta: {
       title: 'DemoA',
-      isSidebar: true
-    }
+      isSidebar: true,
+    },
   },
   {
     name: 'DemoB',
     meta: {
       title: 'DemoB',
-      isSidebar: true
-    }
-  }
+      isSidebar: true,
+    },
+  },
 ]
 export default {
   components: {},
   data() {
     return {
       defaultMenuRouteName: '',
-      menuList
+      menuList,
     }
   },
   computed: {
     ...mapState({}),
     ...mapGetters({
-      isCollapsed: 'layout/isCollapsed'
+      isCollapsed: 'layout/isCollapsed',
     }),
     // 菜单导航
     navs() {
@@ -76,7 +76,7 @@ export default {
       /** 过滤出isSidebar为true的route */
       const navs = routesClone.filter(i => i.meta && i.meta.isSidebar)
       return navs
-    }
+    },
   },
   watch: {},
   created() {},
@@ -88,8 +88,8 @@ export default {
       const { name } = route
       // 通过route.name进行导航
       this.$router.push({ name })
-    }
-  }
+    },
+  },
 }
 </script>
 
