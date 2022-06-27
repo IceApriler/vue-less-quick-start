@@ -1,12 +1,11 @@
 const path = require('path')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
-const productionGzipExtensions = ['js', 'css']
-const Timestamp = new Date().getTime()
-const isPro = process.env.VUE_APP_ENV === 'prod'
 
 module.exports = {
   outputDir: 'dist-vue-less-quick-start',
   publicPath: './',
+  // 生产环境不启用sourceMap
+  productionSourceMap: false,
   transpileDependencies: ['ismobilejs', 'ant-design-vue'],
   css: {
     loaderOptions: {
@@ -21,28 +20,41 @@ module.exports = {
       patterns: [path.resolve(__dirname, './src/assets/style/global.less')],
     },
   },
-  configureWebpack: {
-    devtool: isPro ? false : 'inline-source-map',
-    resolve: {
+  configureWebpack: config => {
+    if (process.env.NODE_ENV === 'production') {
+      // 为生产环境修改配置...
+      config['performance'] = {
+        //打包文件大小配置
+        //入口起点的最大体积
+        maxEntrypointSize: 50000000,
+        //生成文件的最大体积
+        maxAssetSize: 30000000,
+        //只给出 js 文件的性能提示
+        assetFilter: function(assetFilename) {
+          return assetFilename.endsWith('.js')
+        },
+      }
+      config.devtool = false
+
+      config.plugins.push(
+        // 配置compression-webpack-plugin压缩
+        new CompressionWebpackPlugin({
+          algorithm: 'gzip',
+          test: /\.(js|css)$/i,
+          threshold: 10240,
+          minRatio: 0.8,
+        }),
+      )
+    } else {
+      config.devtool = 'inline-source-map'
+    }
+
+    Object.assign(config.resolve, {
       alias: {
         '@': path.join(__dirname, './src'),
         '@assets': path.join(__dirname, './src/assets'),
         '@images': path.join(__dirname, './src/assets/images'),
       },
-    },
-    plugins: [
-      // 配置compression-webpack-plugin压缩
-      new CompressionWebpackPlugin({
-        algorithm: 'gzip',
-        test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
-        threshold: 10240,
-        minRatio: 0.8,
-      }),
-    ],
-    output: {
-      // 输出重构  打包编译后的 文件名称  【模块名称.时间戳】
-      filename: `js/[name].${Timestamp}.js`,
-      chunkFilename: `js/[name].${Timestamp}.js`,
-    },
+    })
   },
 }
