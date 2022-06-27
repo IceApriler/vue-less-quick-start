@@ -1,4 +1,5 @@
 const path = require('path')
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
 module.exports = {
   outputDir: 'dist-vue-less-quick-start',
@@ -34,6 +35,16 @@ module.exports = {
         },
       }
       config.devtool = false
+
+      config.plugins.push(
+        // 配置compression-webpack-plugin压缩
+        new CompressionWebpackPlugin({
+          algorithm: 'gzip',
+          test: /\.(js|css)$/i,
+          threshold: 10240,
+          minRatio: 0.8,
+        }),
+      )
     } else {
       config.devtool = 'inline-source-map'
     }
