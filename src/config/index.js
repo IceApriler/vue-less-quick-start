@@ -5,10 +5,10 @@ console.log(VUE_APP_ENV)
 let baseApiUrl
 switch (VUE_APP_ENV) {
   case 'dev':
-    baseApiUrl = 'http://10.10.10.10:80/fupin'
+    baseApiUrl = ''
     break
   case 'prod':
-    baseApiUrl = 'http://10.10.10.10:80/fupin'
+    baseApiUrl = ''
     break
   case 'qa':
     baseApiUrl = ''
