@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   plugins: {
-    'postcss-px-to-viewport': {
+    'postcss-px-to-viewport-update': {
       unitToConvert: 'px',
       viewportWidth: 750,
       viewportHeight: 1334,

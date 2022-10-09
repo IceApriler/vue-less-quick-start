@@ -46,7 +46,7 @@ function doAxios(opts) {
         }
       })
       .catch(err => {
-        message.error(err.message || '系统错误请联系管理员', 3)
+        message.error(err.response.data.msg || '系统错误请联系管理员', 3)
         if (
           err.response &&
           err.response.data &&
@@ -54,7 +54,7 @@ function doAxios(opts) {
         ) {
           router.replace('/login')
         }
-        reject(err)
+        reject(err.response.data)
       })
   })
 }
